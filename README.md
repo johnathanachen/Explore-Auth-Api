@@ -11,3 +11,5 @@ A custom API on Node using Express and connect to Mongo DB using Mongoose.
 |**index.html**| The main file|
 |**server**| Express Server|
 |**mongoose**| Folder related to Mongoose(mongodb) *Schema* and *Model*|
+|**graphql**| GraphQL’s logic |
+|**graphql/mutations**| Files for Graphql CRUD |
