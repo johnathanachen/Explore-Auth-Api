@@ -26,8 +26,8 @@ npm run start
 ```
 
 ## Requests
-[RESTful][]
-[GraphQL][]
+- [RESTful][]
+- [GraphQL][]
 
 
 ## Built With
