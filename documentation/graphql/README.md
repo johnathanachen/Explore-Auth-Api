@@ -17,8 +17,10 @@ https://domain.com/graphiql
 Send any of the following requests via the GraphiQL window:
 
 ## Example
-- [Create][]
-
+- [QUERY][] (GET)
+- [ADD][] (PUT)
+- [REMOVE][]
+- [UPDATE][]
 
 [Create]: /Explore-Auth-Api/documentation/graphql/CREATE_data.md
 
