@@ -25,6 +25,11 @@ Then:
 npm run start
 ```
 
+## Requests
+[RESTful][]
+[GraphQL][]
+
+
 ## Built With
 - [Git](https://git-scm.com/) - Version Control
 - [Node.js](https://nodejs.org/) - JS Runtime Environment
@@ -38,3 +43,7 @@ npm run start
 
 ## Author
 * [Johnathan Chen](https://github.com/johnathanachen)
+
+
+[RESTful]: /Explore-Auth-Api/documentation/graphql/
+[GraphQL]: /Explore-Auth-Api/documentation/graphql/
