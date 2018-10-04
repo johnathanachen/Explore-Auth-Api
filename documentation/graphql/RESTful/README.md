@@ -8,10 +8,10 @@ CRUD API built with Express, Node and Mongo for database
 * Delete
 
 ## Example
-- [QUERY][] (GET)
-- [ADD][] (POST)
-- [REMOVE][] (DELETE)
-- [UPDATE][] (PUT)
+- [GET][] 
+- [POST][] 
+- [UPDATE][] 
+- [DELETE][] 
 
 [GET]: /Explore-Auth-Api/documentation/graphql/
 [POST]: /Explore-Auth-Api/documentation/graphql/
