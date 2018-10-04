@@ -17,22 +17,9 @@ https://domain.com/graphiql
 Send any of the following requests via the GraphiQL window:
 
 ## Example
-### Query to CREATE New Listing
-```bash
-  mutation AddNewCo {
-    addCompany (name: "HP"){
-      name
-    }
-  }
-```
+- [Create][]
 
-## Response
-```bash
-  {
-    "data": {
-      "addCompany": {
-        "name": "HP"
-      }
-    }
-  }
+
 ```
+[Create]: /Explore-Auth-Api/documentation/graphql/Create_object.md
+
