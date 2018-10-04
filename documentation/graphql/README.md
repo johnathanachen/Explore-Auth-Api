@@ -22,5 +22,9 @@ Send any of the following requests via the GraphiQL window:
 - [REMOVE][]
 - [UPDATE][]
 
-[Create]: /Explore-Auth-Api/documentation/graphql/CREATE_data.md
+[QUERY]: /Explore-Auth-Api/documentation/graphql/
+[ADD]: /Explore-Auth-Api/documentation/graphql/
+[REMOVE]: /Explore-Auth-Api/documentation/graphql/
+[UPDATE]: /Explore-Auth-Api/documentation/graphql/
+
 
