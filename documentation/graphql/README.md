@@ -20,5 +20,5 @@ Send any of the following requests via the GraphiQL window:
 - [Create][]
 
 
-[Create]: /Explore-Auth-Api/documentation/graphql/Create_object.md
+[Create]: /Explore-Auth-Api/documentation/graphql/CREATE_data.md
 
