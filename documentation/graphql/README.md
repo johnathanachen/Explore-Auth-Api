@@ -18,9 +18,9 @@ Send any of the following requests via the GraphiQL window:
 
 ## Example
 - [QUERY][] (GET)
-- [ADD][] (PUT)
-- [REMOVE][]
-- [UPDATE][]
+- [ADD][] (POST)
+- [REMOVE][] (DELETE)
+- [UPDATE][] (PUT)
 
 [QUERY]: /Explore-Auth-Api/documentation/graphql/
 [ADD]: /Explore-Auth-Api/documentation/graphql/
