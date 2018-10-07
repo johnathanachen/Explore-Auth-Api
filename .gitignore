@@ -49,3 +49,12 @@ node_modules
 
 # .env
 .env
+
+notes.md
+.yarnrc
+.nvmrc
+.istanbul.yml
+.gitattributes
+.eslintrc
+.editorconfig
+.babelrc
