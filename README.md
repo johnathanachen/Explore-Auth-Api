@@ -1,4 +1,4 @@
-# Fitness API
+# Fitii (Fitness API)
 
 A custom API on Node using Express and connect to Mongo DB using Mongoose.
 
