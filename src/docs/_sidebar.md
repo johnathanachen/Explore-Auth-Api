@@ -1,5 +1,0 @@
-- [<div class="ps-icon ps-icon-download"></div> Installation](installation.md)
-- [<span class="ps-icon ps-icon-branch"></span>API & Callbacks](api.md)
-  - [<div class="ps-icon ps-icon-arrow-right"></div>GET Schedule](GET-schedule.md)
-  - [<div class="ps-icon ps-icon-arrow-right"></div>GET Workout](GET-workout.md)
-  - [<div class="ps-icon ps-icon-arrow-right"></div>POST Schedule](POST-schedule.md)
