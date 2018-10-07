@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/johnathanachen/Fitii/branch/master/docs/logo.png" width="300" alt="Fitii">
-  
+  <img src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/logo.png" width="300" alt="Fitii">
   <br>
   <a href="#"><img src="https://img.shields.io/badge/npm-v1.4.5-42b983.svg" alt="Version"></a>
   <a href="#"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
