@@ -1,12 +1,15 @@
 const express = require('express');
 const User = require('./user.model.js');
-const config = require('../../config/config');
-const jwt = require('jsonwebtoken');
+const auth = require('../../config/auth');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/', (req, res) => {
+router.get('/', auth.optional, (req, res) => {
   res.json({ welcome: 'user' });
+});
+
+router.get('/current', auth.required, (req, res) => {
+  res.json('access granted');
 });
 
 router.post('/token', (req, res) => {
@@ -21,16 +24,7 @@ router.post('/token', (req, res) => {
       if (user.password !== (req.body.password || req.query.password)) {
         res.json({ success: false, message: 'Authentication failed. Wrong password.' });
       } else {
-       // if user is found and password is right
-       // create a token with only our given payload
-   // we don't want to pass in the entire user since that has the password
-        const payload = {
-          admin: user.admin
-        };
-        const token = jwt.sign(payload, config.jwtSecret, {
-          expiresIn: 1440 // expires in 24 hours
-        });
-
+        const token = user.generateJWT();
        // return the information including token as JSON
         res.json({
           success: true,

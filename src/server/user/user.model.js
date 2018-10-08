@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt-nodejs;');
+const bcrypt = require('bcrypt-nodejs');
+const jwt = require('jsonwebtoken');
+const config = require('../../config/config');
+
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -13,31 +16,28 @@ const UserSchema = new Schema({
 
 });
 
-// UserSchema.pre('save', function(next){
-//   // SET createdAt AND updatedAt
-//   var now = new Date();
-//   this.updatedAt = now;
-//   if ( !this.createdAt ) {
-//     this.createdAt = now;
-//   };
-//
-//   // ENCRYPT PASSWORD
-//   var user = this;
-//   if (!user.isModified('password')) {
-//     return next();
-//   };
-//   bcrypt.genSalt(10, function(err, salt) {
-//     bcrypt.hash(user.password, salt, null, function(err, hash) {
-//       user.password = hash;
-//       next();
-//     });
-//   });
-// });
-//
-// UserSchema.methods.comparePassword = function(password, done) {
-//   bcrypt.compare(password, this.password, function(err, isMatch) {
-//     done(err, isMatch);
-//   });
-// };
+UserSchema.methods.setPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+
+UserSchema.methods.validatePassword = password => bcrypt.compareSync(password, this.local.password);
+
+UserSchema.methods.generateJWT = () => {
+  const today = new Date();
+  const expirationDate = new Date(today);
+  expirationDate.setDate(today.getDate() + 60);
+
+  return jwt.sign({
+    username: this.username,
+    id: this._id,
+    admin: this.admin,
+    exp: parseInt(expirationDate.getTime() / 1000, 10),
+  }, config.jwtSecret);
+};
+
+UserSchema.methods.toAuthJSON = () => ({
+  _id: this._id,
+  username: this.username,
+  token: this.generateJWT(),
+});
+
 
 module.exports = mongoose.model('User', UserSchema, 'users');
