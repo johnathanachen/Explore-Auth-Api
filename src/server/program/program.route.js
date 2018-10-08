@@ -1,13 +1,8 @@
 const express = require('express');
+const programController = require('./program.controller');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/v1/schedule', (req, res) => {
-  // get user token and find user's schedule
-  res.send('todo');
-});
+router.use('/', programController);
 
-router.put('/v1/:id', (req, res) => {
-  // edit a program
-  res.send('edit program');
-});
+module.exports = router;

@@ -17,8 +17,6 @@ const authRoutes = require('../server/auth/auth.route');
 
 const app = express();
 
-require('./passport')(passport);
-
 // required for passport
 app.use(session({ secret: config.jwtSecret }));
 app.use(passport.initialize());
