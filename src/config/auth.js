@@ -13,15 +13,16 @@ const getTokenFromHeaders = (req) => {
 const auth = {
   required: jwt({
     secret: config.jwtSecret,
-    userProperty: 'payload',
+    userProperty: 'user',
     getToken: getTokenFromHeaders,
   }),
   optional: jwt({
     secret: config.jwtSecret,
-    userProperty: 'payload',
+    userProperty: 'user',
     getToken: getTokenFromHeaders,
     credentialsRequired: false,
   }),
 };
+
 
 module.exports = auth;

@@ -30,9 +30,8 @@ $ npm run start
 
 ## Resources
 ### [User](User.md)
-- [```GET``` Setup User]() [Auth]
-- [```GET``` User List]() [Auth]
-- [```DELETE``` Remove User]() [Auth]
+- [```POST``` Login]()
+- [```POST``` Signup]()
 
 ### [Program](Program.md)
 - [```GET``` Program List]()

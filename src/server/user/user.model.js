@@ -9,7 +9,7 @@ const UserSchema = new Schema({
   createdAt: { type: Date },
   updatedAt: { type: Date },
 
-  username: { type: String, unique: false, required: false },
+  username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   first: { type: String, required: false },
   admin: { type: Boolean }
@@ -39,5 +39,29 @@ UserSchema.methods.toAuthJSON = () => ({
   token: this.generateJWT(),
 });
 
+UserSchema.pre('save', (next) => {
+  const now = new Date();
+  this.updatedAt = now;
+  if (!this.createdAt) {
+    this.createdAt = now;
+  }
+
+  // ENCRYPT PASSWORD
+  const user = this;
+  // user.password = user.setPassword();
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(user.password, salt, null, (hash) => {
+      user.password = hash;
+      next();
+    });
+  });
+  return 'done';
+});
+
+UserSchema.methods.comparePassword = (password, done) => {
+  bcrypt.compare(password, this.password, (err, isMatch) => {
+    done(err, isMatch);
+  });
+};
 
 module.exports = mongoose.model('User', UserSchema, 'users');

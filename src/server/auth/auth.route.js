@@ -14,14 +14,14 @@ const router = express.Router(); // eslint-disable-line new-cap
 
 router.get('/setup', (req, res) => {
   // create a sample user
-  const johnny = new User({
-    username: 'aajoh',
+  const user = new User({
+    username: 'admin',
     password: 'password',
-    admin: false
+    admin: true
   });
 
   // save the sample user
-  johnny.save((err) => {
+  user.save((err) => {
     if (err) throw err;
     res.json({ success: 'User saved successfully' });
   });

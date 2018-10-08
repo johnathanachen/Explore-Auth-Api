@@ -9,10 +9,24 @@ router.get('/', auth.optional, (req, res) => {
 });
 
 router.get('/current', auth.required, (req, res) => {
-  res.json('access granted');
+  res.json({ authorized: 'content' });
 });
 
-router.post('/token', (req, res) => {
+router.post('/signup', auth.optional, (req, res) => {
+  // create a sample user
+  const newUser = new User({
+    username: req.query.username,
+    password: req.query.password,
+    admin: false
+  });
+
+  newUser.save((err) => {
+    if (err) throw err;
+    res.json({ success: 'User saved successfully' });
+  });
+});
+
+router.post('/login', auth.optional, (req, res) => {
   User.findOne({
     username: req.body.username || req.query.username
   }, (err, user) => {
@@ -36,5 +50,12 @@ router.post('/token', (req, res) => {
   });
 });
 
+router.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res.status(err.status).send({ 'Try these': { Login: '/api/v1/users/login', Signup: '/api/v1/users/signup' } });
+    return;
+  }
+  next();
+});
 
 module.exports = router;
