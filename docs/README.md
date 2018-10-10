@@ -32,19 +32,30 @@ $ npm run start
 ### [User](User.md)
 - [```POST``` Login]()
 - [```POST``` Signup]()
+- [```DELETE``` Remove User]()
 
 ### [Program](Program.md)
 - [```GET``` Program List]()
 - [```POST``` Create Program](program/POST_Create.md)
 - [```PUT``` Update Program]()
+- [```DELETE``` Remove Program]()
 
 ### [Schedule](schedule.md)
-- [```GET``` Schedule](GET.md)
-- [```POST``` Create Activity]()
+- [```GET``` Schedule List]()
+- [```POST``` Create Schedule]()
 - [```PUT``` Update Schedule]()
-- [```DELETE``` Remove Activity]()
+- [```DELETE``` Remove Schedule]()
 
+### [Log](log.md)
+- [```GET``` Log List]()
+- [```POST``` Create Log]()
+- [```PUT``` Update Log]()
+- [```DELETE``` Remove Exercise]()
 
+### [Exercise](exercise.md)
+- [```POST``` Create Exercise]()
+- [```PUT``` Update Exercise]()
+- [```DELETE``` Remove Exercise]()
 
 ## Feedback
 Find a bug or have a feature request? Please file an <a href="https://github.com/johnathanachen/FitnessAPI/issues" targe="_blank">issue</a>!

@@ -7,13 +7,10 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   createdAt: { type: Date },
-  updatedAt: { type: Date },
-
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   first: { type: String, required: false },
   admin: { type: Boolean }
-
 });
 
 UserSchema.methods.setPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);

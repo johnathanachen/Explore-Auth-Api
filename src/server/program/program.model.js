@@ -8,8 +8,7 @@ const ProgramSchema = new Schema({
   exercises: [{ type: String }],
   frequency: { type: String },
   repetition: { type: Number },
-  setQuantity: { type: Number },
-  userId: { type: String }
+  setQuantity: { type: Number }
 }, {
   versionKey: false
 });

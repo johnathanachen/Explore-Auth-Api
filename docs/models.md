@@ -1,6 +1,10 @@
-<img href="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/assets/images/visually.png" width="300">
+# Models
 
-# Log
+<p align="center">
+  <img src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/assets/images/models.png" width="300">
+</p>
+
+## Log
 
 Field | Data Type | Description
 --------- | ----------- | -----------
@@ -8,7 +12,7 @@ date | Date | date of creation
 exercises | [Exercise] | list of exercises completed for session
 
 
-# Exercise
+## Exercise
 
 Field | Data Type | Description
 --------- | ----------- | -----------
@@ -17,7 +21,7 @@ setQuantity | Number | number of sets completed
 repetition | Number | number of repetition completed
 weight | String | total weight used during session
 
-# Schedule
+## Schedule
 
 Field | Data Type | Description
 --------- | ----------- | -----------
@@ -26,7 +30,7 @@ programName | String | name of selected program
 logs | [Log] | a list of completed log entries
 
 
-# Program
+## Program
 
 Field | Data Type | Description
 --------- | ----------- | -----------
