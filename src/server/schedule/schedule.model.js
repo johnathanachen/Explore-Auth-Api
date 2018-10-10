@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
+const Log = require('../log/log.model');
 
 const Schema = mongoose.Schema;
 
 const ScheduleSchema = new Schema({
-  userId: { type: String },
-  date: { type: Date, default: Date.now },
-  exercise: { type: String },
-  repetition: { type: String },
-  weight: { type: String }
+  programId: { type: String },
+  programName: { type: Date, default: Date.now },
+  logs: [{ type: mongoose.Schema.Types.ObjectId, ref: Log }],
 }, {
   versionKey: false
 });
