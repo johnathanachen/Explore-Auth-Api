@@ -1,55 +1,53 @@
 <p align="center">
   <img href="https://johnathanachen.github.io/Fitii/" src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/logo.png" width="300" alt="Fitii">
   <br>
-  <a href="#"><img src="https://img.shields.io/badge/npm-v1.4.5-42b983.svg" alt="Version"></a>
+  <a href="#"><img src="https://img.shields.io/badge/npm-v1.0.0-42b983.svg" alt="Version"></a>
   <a href="#"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Travis CI"></a>
 </p>
 
-A custom API on Node using Express and connect to Mongo DB using Mongoose.
+> ***Fitii*** is a custom API on Node using Express and connect to Mongo DB using Mongoose.
 
-> Refer `package.json`'s ***dependencies*** and ***devDependencies*** to see the npm packages and versions used.
+- [features](#features)
+- [installation](#installation)
+- [usage](#usage)
+- [contributing](#contributing)
+- [license](#license)
 
-### Important Files and Folders
+## Setup
 
-|File/Folder|Description|
-|-----------|-----------|
-|**index.html**| The main file|
-|**server**| Express Server|
-|**mongoose**| Folder related to Mongoose(mongodb) *Schema* and *Model*|
-|**graphql**| GraphQL’s logic |
-|**graphql/mutations**| Files for Graphql CRUD |
+### Installation
 
-
-## Production
-To build and serve the app for production, run the following in your terminal:
-```bash
-npm run build
-```
-Then:
-```bash
-npm run start
+```js
+$ npm install
 ```
 
-## Requests
-- [RESTful][]
-- [GraphQL][]
+### Run
+
+```js
+$ npm run start
+```
+
+## Resources
+### [User](User.md)
+- [```POST``` Login]()
+- [```POST``` Signup]()
+
+### [Program](Program.md)
+- [```GET``` Program List]()
+- [```POST``` Create Program](program/POST_Create.md)
+- [```PUT``` Update Program]()
+
+### [Schedule](schedule.md)
+- [```GET``` Schedule](GET.md)
+- [```POST``` Create Activity]()
+- [```PUT``` Update Schedule]()
+- [```DELETE``` Remove Activity]()
 
 
-## Built With
-- [Git](https://git-scm.com/) - Version Control
-- [Node.js](https://nodejs.org/) - JS Runtime Environment
-- [GraphQL](http://graphql.org/) - API Query Language and Runtime
-- [MongoDb](https://www.mongodb.com/download-center#community)
-- [Yarn](https://yarnpkg.com) - Package Manager
-- [Express](https://expressjs.com/en/starter/installing.html) - Web Framework
-- [ESLint](https://eslint.org/) - Linting Tool
-- [Atom](https://atom.io//) - Code Editor
 
+## Feedback
+Find a bug or have a feature request? Please file an <a href="https://github.com/johnathanachen/FitnessAPI/issues" targe="_blank">issue</a>!
 
-## Author
-* [Johnathan Chen](https://github.com/johnathanachen)
-
-
-[RESTful]: /Explore-Auth-Api/documentation/graphql/
-[GraphQL]: /Explore-Auth-Api/documentation/graphql/
+## Contact
+Email: [johnathanchenn@outlook.com](mailto:johnathanchenn@outlook.com)

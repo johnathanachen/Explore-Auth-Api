@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const ScheduleSchema = new Schema({
   programId: { type: String },
-  programName: { type: Date, default: Date.now },
+  programName: { type: String },
   logs: [{ type: mongoose.Schema.Types.ObjectId, ref: Log }],
 }, {
   versionKey: false
