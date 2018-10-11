@@ -30,32 +30,63 @@ $ npm run start
 
 ## Resources
 ### [User](User.md)
-- [```POST``` Login]()
-- [```POST``` Signup]()
-- [```DELETE``` Remove User]()
+- [```GET``` Admin User List]()
+- [```POST``` User Login]()
+- [```POST``` User Signup]()
+- [```DELETE``` Admin Remove User]()
 
 ### [Program](Program.md)
 - [```GET``` Program List]()
-- [```POST``` Create Program](program/POST_Create.md)
-- [```PUT``` Update Program]()
-- [```DELETE``` Remove Program]()
+- [```POST``` Admin Create Program]()
+- [```POST``` User Create Program]()
+- [```PUT``` User Update Program]()
+- [```DELETE``` Admin Remove Program]()
+- [```DELETE``` User Remove Program]()
 
 ### [Schedule](schedule.md)
-- [```GET``` Schedule List]()
-- [```POST``` Create Schedule]()
-- [```PUT``` Update Schedule]()
-- [```DELETE``` Remove Schedule]()
+- [```GET``` User Schedule List]()
+- [```POST``` User Create Schedule]()
+- [```PUT``` User Update Schedule]()
+- [```DELETE``` User Remove Schedule]()
 
 ### [Log](log.md)
-- [```GET``` Log List]()
-- [```POST``` Create Log]()
-- [```PUT``` Update Log]()
-- [```DELETE``` Remove Exercise]()
+- [```GET``` User Log List]()
+- [```POST``` User Create Log]()
+- [```PUT``` User Update Log]()
+- [```DELETE``` User Remove Exercise]()
 
 ### [Exercise](exercise.md)
-- [```POST``` Create Exercise]()
-- [```PUT``` Update Exercise]()
-- [```DELETE``` Remove Exercise]()
+- [```GET``` User Exercise List]()
+- [```POST``` User Create Exercise]()
+- [```PUT``` User Update Exercise]()
+- [```DELETE``` User Remove Exercise]()
+
+GET /api/v1/users
+POST /api/v1/users/login        [DONE]
+POST /api/v1/users/signup       [DONE]
+PUT /api/v1/users/{id}/edit
+
+GET /api/v1/user/programs            [DONE]
+POST /api/v1/user/programs/new       [DONE]
+PUT /api/v1/user/programs/:id/edit   [DONE]
+DELETE /api/v1/user/programs/:id     [DONE]
+GET /api/v1/programs (public programs thats preset)
+
+GET /api/v1/user/schedules             [BUG]
+POST /api/v1/user/schedules/new        [DONE][CHECKED]
+PUT /api/v1/user/schedules/:id/edit    [DONE][CHECKED]
+DELETE /api/v1/user/schedules/:id      [DONE][CHECKED]
+
+GET /api/v1/user/schedules/logs
+POST /api/v1/user/schedules/logs/new       [DONE][CHECKED]
+PUT /api/v1/user/schedules/logs/:id/edit   [BUG]
+DELETE /api/v1/user/schedules/logs/:id
+
+GET /api/v1/user/schedules/logs/exercises
+POST /api/v1/user/schedules/logs/exercises/new
+PUT /api/v1/user/schedules/logs/exercises/:id/edit
+DELETE /api/v1/user/schedules/logs/exercises/:id
+
 
 ## Feedback
 Find a bug or have a feature request? Please file an <a href="https://github.com/johnathanachen/FitnessAPI/issues" targe="_blank">issue</a>!

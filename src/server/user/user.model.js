@@ -6,7 +6,7 @@ const config = require('../../config/config');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  createdAt: { type: Date },
+  createdAt: { type: Date, auto: true },
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   first: { type: String, required: false },

@@ -1,8 +1,8 @@
 # Models
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/assets/images/models.png" width="300">
-</p>
+
+<img src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/assets/images/models.png" width="800">
+
 
 ## Log
 

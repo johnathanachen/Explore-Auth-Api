@@ -1,16 +1,20 @@
 const express = require('express');
-const Program = require('./program.model');
+const Exercise = require('./exercise.model');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
 
 const router = express.Router(); // eslint-disable-line new-cap
+
+router.get('/', (req, res) => {
+  res.send('hi');
+});
 
 // router.get('/', (req, res) => {
 //   const token = req.headers.authorization.split(' ')[1];
 //   const decoded = jwt.verify(token, config.jwtSecret);
 //   const username = decoded.username;
 //
-//   Program.find({ userId: username }).exec((err, result) => {
+//   Exercise.find({ userId: username }).exec((err, result) => {
 //     if (!err) {
 //       res.status(200).send(result);
 //       res.json({ result });
@@ -18,43 +22,45 @@ const router = express.Router(); // eslint-disable-line new-cap
 //   });
 // });
 
-router.get('/', (req, res) => {
-  res.send('hi');
-});
-
 router.post('/new', (req, res) => {
-  const newProgram = new Program({
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const username = decoded.username;
+
+  const newExercise = new Exercise({
     name: req.body.name,
     duration: req.body.duration,
     exercises: req.body.exercises,
     frequency: req.body.frequency,
     repetition: req.body.repetition,
-    setQuantity: req.body.setQuantity
+    setQuantity: req.body.setQuantity,
+    userId: username
   });
 
-  newProgram.save((err) => {
+  newExercise.save((err) => {
     if (err) throw err;
-    res.json({ success: newProgram });
+    res.json({ success: newExercise });
   });
 });
 
-router.put('/:program/edit', (req, res) => {
+router.put('/:exercise/edit', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
   const username = decoded.username;
-  Program.findOneAndUpdate({ userId: username, name: req.params.program }, req.body, { new: true })
+  Exercise.findOneAndUpdate({ userId: username, name: req.params.exercise },
+     req.body, { new: true })
     .exec((err, result) => {
       if (err) return res.status(500).json({ err: err.message });
       return res.json({ result, message: 'Successfully updated' });
     });
 });
 
-router.delete('/:program', (req, res) => {
+router.delete('/:exercise', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
   const username = decoded.username;
 
-  Program.findOneAndRemove({ userId: username, name: req.params.program }, (err, result) => {
+  Exercise.findOneAndRemove({ userId: username, name: req.params.exercise }, (err, result) => {
     if (err) return res.status(500).json({ err: err.message });
     return res.json({ result, message: 'Successfully deleted' });
   });

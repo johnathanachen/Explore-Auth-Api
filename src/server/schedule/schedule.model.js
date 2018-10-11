@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
-const Log = require('../log/log.model');
 const Program = require('../program/program.model');
+const User = require('../user/user.model');
+const Log = require('../log/log.model');
 
 const Schema = mongoose.Schema;
 
 const ScheduleSchema = new Schema({
-  program: { type: mongoose.Schema.Types.ObjectId, ref: Program },
-  logs: [{ type: mongoose.Schema.Types.ObjectId, ref: Log }],
+  programId: { type: mongoose.Schema.Types.ObjectId, ref: Program },
+  programName: { type: String, index: { unique: false } },
+  logs: [{ type: mongoose.Schema.Types.ObjectId, default: Log }],
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: User },
+  username: { type: String }
 }, {
   versionKey: false
 });
