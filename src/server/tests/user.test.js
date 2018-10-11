@@ -1,5 +1,3 @@
-/* eslint-disable */
-const mongoose = require('mongoose');
 const User = require('../user/user.model');
 
 const chai = require('chai');
@@ -9,17 +7,17 @@ const server = require('../../index');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
 
-const should = chai.should();
-const expect = chai.expect;
-const assert = chai.assert;
+// const should = chai.should();
+// const expect = chai.expect;
+// const assert = chai.assert;
 
 chai.config.includeStack = true;
 chai.use(chaiHttp);
 
-// const loginDetails = {
-//   username: 'TEST user',
-//   password: 'password'
-// }
+const loginDetails = {
+  username: 'TEST user',
+  password: 'password'
+};
 
 const registerDetails = {
   username: 'TEST user',
@@ -32,7 +30,7 @@ const user = {
   token: 'token'
 };
 
-describe('User', () => {
+describe('User authorization ', () => {
   beforeEach((done) => {
     const today = new Date();
     const expirationDate = new Date(today);
@@ -60,12 +58,13 @@ describe('User', () => {
 
 
   describe('/GET users/current', () => {
-    it('it should return 202 for authorized', (done) => {
+    it('it should respond with welcome', (done) => {
       chai.request(server)
             .get('/api/v1/users/current')
             .set('Authorization', `Token ${user.token}`)
             .end((err, res) => {
               res.should.have.status(200);
+              res.body.should.have.property('welcome');
               done();
             });
     });
@@ -87,5 +86,40 @@ describe('/GET users/current', () => {
             res.should.have.status(401);
             done();
           });
+  });
+});
+
+describe('User signup ', () => {
+  describe('/POST users/signup', () => {
+    it('it should save a new user', (done) => {
+      chai.request(server)
+            .post('/api/v1/users/signup')
+            .send(registerDetails)
+            .end((err, res) => {
+              res.should.have.status(200);
+              res.body.should.have.property('success');
+              done();
+            });
+    });
+  });
+
+  describe('/POST users/login', () => {
+    it('it should have message Enjoy your API token!', (done) => {
+      chai.request(server)
+            .post('/api/v1/users/login')
+            .send(loginDetails)
+            .end((err, res) => {
+              res.should.have.status(200);
+              res.body.should.have.property('success');
+              done();
+            });
+    });
+  });
+
+  afterEach((done) => {
+    User.remove({ username: 'TEST user' }, (err) => {
+      if (err) throw new Error('cannot remove user');
+      done();
+    });
   });
 });

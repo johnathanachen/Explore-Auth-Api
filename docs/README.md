@@ -61,9 +61,10 @@ $ npm run start
 - [```PUT``` User Update Exercise]()
 - [```DELETE``` User Remove Exercise]()
 
-GET /api/v1/users
-POST /api/v1/users/login        [DONE]
-POST /api/v1/users/signup       [DONE]
+GET /api/v1/users                     [TESTED]
+GET /api/v1/users/current       [DONE][TESTED]
+POST /api/v1/users/login        [DONE][TESTED]
+POST /api/v1/users/signup       [DONE][TESTED]
 PUT /api/v1/users/{id}/edit
 
 GET /api/v1/user/programs            [DONE]

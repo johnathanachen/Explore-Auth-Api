@@ -21,8 +21,8 @@ router.get('/current', auth.required, (req, res) => {
 router.post('/signup', auth.optional, (req, res) => {
   // create a sample user
   const newUser = new User({
-    username: req.query.username,
-    password: req.query.password,
+    username: req.query.username || req.body.username,
+    password: req.query.password || req.body.username,
     admin: false
   });
 
