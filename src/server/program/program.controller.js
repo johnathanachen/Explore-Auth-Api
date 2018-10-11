@@ -2,34 +2,35 @@ const express = require('express');
 const Program = require('./program.model');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
+const auth = require('../../config/auth');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-// router.get('/', (req, res) => {
-//   const token = req.headers.authorization.split(' ')[1];
-//   const decoded = jwt.verify(token, config.jwtSecret);
-//   const username = decoded.username;
-//
-//   Program.find({ userId: username }).exec((err, result) => {
-//     if (!err) {
-//       res.status(200).send(result);
-//       res.json({ result });
-//     } else { throw err; }
-//   });
-// });
+router.get('/', auth.required, (req, res) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const userId = decoded.id;
 
-router.get('/', (req, res) => {
-  res.send('hi');
+  Program.find({ userId }).exec((err, result) => {
+    if (!err) {
+      res.status(200).json({ result });
+    } else { res.status(500).json({ err: err.message }); }
+  });
 });
 
 router.post('/new', (req, res) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const userId = decoded.id;
+
   const newProgram = new Program({
     name: req.body.name,
     duration: req.body.duration,
     exercises: req.body.exercises,
     frequency: req.body.frequency,
     repetition: req.body.repetition,
-    setQuantity: req.body.setQuantity
+    setQuantity: req.body.setQuantity,
+    userId
   });
 
   newProgram.save((err) => {
