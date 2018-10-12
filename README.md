@@ -59,6 +59,9 @@ npm test
 ## Author
 * [Johnathan Chen](https://github.com/johnathanachen)
 
+## Logo Design
+* [Vadim Carazan](https://dribbble.com/vadimcarazan)
+
 
 [RESTful]: /Explore-Auth-Api/documentation/graphql/
 [GraphQL]: /Explore-Auth-Api/documentation/graphql/
