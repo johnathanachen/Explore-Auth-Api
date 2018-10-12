@@ -39,6 +39,8 @@ npm run start
 - [Yarn](https://yarnpkg.com) - Package Manager
 - [Express](https://expressjs.com/en/starter/installing.html) - Web Framework
 - [ESLint](https://eslint.org/) - Linting Tool
+- [Passport](http://www.passportjs.org/) - Authentication
+- [JWT](https://jwt.io/) - Authorization
 - [Atom](https://atom.io//) - Code Editor
 
 ## Style Guide
