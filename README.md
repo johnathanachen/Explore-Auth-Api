@@ -30,11 +30,12 @@ Then:
 ```bash
 npm run start
 ```
+## Style Guide
+- [Airbnb](https://github.com/airbnb/javascript)
 
 ## Requests
 - [RESTful][]
 - [GraphQL][]
-
 
 ## Built With
 - [Git](https://git-scm.com/) - Version Control
@@ -46,6 +47,8 @@ npm run start
 - [ESLint](https://eslint.org/) - Linting Tool
 - [Atom](https://atom.io//) - Code Editor
 
+## Testing
+- Chai
 
 ## Author
 * [Johnathan Chen](https://github.com/johnathanachen)
