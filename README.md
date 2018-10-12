@@ -31,11 +31,6 @@ Then:
 npm run start
 ```
 
-## Requests
-- [RESTful][]
-- [GraphQL][]
-
-
 ## Built With
 - [Git](https://git-scm.com/) - Version Control
 - [Node.js](https://nodejs.org/) - JS Runtime Environment
@@ -44,11 +39,28 @@ npm run start
 - [Yarn](https://yarnpkg.com) - Package Manager
 - [Express](https://expressjs.com/en/starter/installing.html) - Web Framework
 - [ESLint](https://eslint.org/) - Linting Tool
+- [Passport](http://www.passportjs.org/) - Authentication
+- [JWT](https://jwt.io/) - Authorization
 - [Atom](https://atom.io//) - Code Editor
 
+## Style Guide
+- [Airbnb](https://github.com/airbnb/javascript)
+
+## Requests
+- [RESTful][]
+- [GraphQL][]
+
+## Testing
+- Chai
+```bash
+npm test
+```
 
 ## Author
 * [Johnathan Chen](https://github.com/johnathanachen)
+
+## Logo Design
+* [Vadim Carazan](https://dribbble.com/vadimcarazan)
 
 
 [RESTful]: /Explore-Auth-Api/documentation/graphql/
