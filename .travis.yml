@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "iojs"
 
-script: npm --prefix ./src run test
+script: cd src npm test
