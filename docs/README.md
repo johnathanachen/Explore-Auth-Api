@@ -25,7 +25,13 @@ $ npm install
 ### Run
 
 ```js
-$ npm run start
+$ nodemon
+```
+
+### Test
+
+```js
+$ npm test
 ```
 
 ## Resources
