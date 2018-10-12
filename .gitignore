@@ -19,6 +19,7 @@ pids
 ehthumbs.db
 Icon?
 Thumbs.db
+.sh
 
 # Babel ES6 compiles files
 dist
