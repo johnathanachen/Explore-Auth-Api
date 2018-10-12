@@ -3,7 +3,7 @@
   <br>
   <a href="#"><img src="https://img.shields.io/badge/npm-v1.4.5-42b983.svg" alt="Version"></a>
   <a href="#"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Travis CI"></a>
+  <a href="#"><img src="https://travis-ci.org/johnathanachen/Fitii.svg?branch=master" alt="Travis CI"></a>
 </p>
 
 A custom API on Node using Express and connect to Mongo DB using Mongoose.
