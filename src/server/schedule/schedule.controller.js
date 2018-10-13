@@ -6,20 +6,15 @@ const config = require('../../config/config');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-// router.get('/', (req, res) => {
-//   const token = req.headers.authorization.split(' ')[1];
-//   const decoded = jwt.verify(token, config.jwtSecret);
-//   const userId = decoded.id;
-//   Schedule.find({ userId }).exec((err, results) => {
-//     if (!err) {
-//       res.status(200).send(results);
-//       res.json({ result: results, message: 'Successfully fetched' });
-//     } else { res.json({ result: 'no schedules' }); }
-//   });
-// });
-
 router.get('/', (req, res) => {
-  res.send('hi');
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const userId = decoded.id;
+  Schedule.find({ userId }).exec((err, result) => {
+    if (!err) {
+      res.status(200).json({ result });
+    } else { res.status(500).json({ err: err.message }); }
+  });
 });
 
 router.post('/new', (req, res) => {
@@ -29,7 +24,7 @@ router.post('/new', (req, res) => {
   const userId = decoded.id;
 
   const newSchedule = new Schedule({
-    programId: req.body.programId,
+    name: req.body.name,
     programName: req.body.programName,
     userId,
     username,
@@ -38,7 +33,7 @@ router.post('/new', (req, res) => {
 
   newSchedule.save((err) => {
     if (err) throw err;
-    res.json({ result: newSchedule, message: 'Successfully added' });
+    res.json({ result: newSchedule, success: 'Schedule added' });
   });
 });
 
@@ -46,11 +41,12 @@ router.put('/:schedule/edit', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
   const userId = decoded.id;
-  Schedule.findOneAndUpdate({ userId, programName: req.params.schedule },
+
+  Schedule.findOneAndUpdate(({ userId }, { name: req.params.schedule }),
      req.body, { new: true })
     .exec((err, result) => {
       if (err) return res.status(500).json({ err: err.message });
-      return res.json({ result, message: 'Successfully updated' });
+      return res.json({ result, success: 'Schedule updated' });
     });
 });
 
@@ -59,9 +55,9 @@ router.delete('/:schedule', (req, res) => {
   const decoded = jwt.verify(token, config.jwtSecret);
   const userId = decoded.id;
 
-  Schedule.findOneAndRemove({ userId, programName: req.params.schedule }, (err, result) => {
+  Schedule.findOneAndRemove({ userId, name: req.params.schedule }, (err, result) => {
     if (err) return res.status(500).json({ err: err.message });
-    return res.json({ result, message: 'Successfully deleted' });
+    return res.json({ result, success: 'Schedule deleted' });
   });
 });
 
@@ -77,7 +73,7 @@ router.post('/:schedule/logs/new', (req, res) => {
 
   newLog.save((err) => {
     if (err) throw err;
-    res.json({ success: newLog, message: 'Successfully added' });
+    res.json({ success: newLog, message: 'Schedule added' });
   });
 });
 

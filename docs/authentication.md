@@ -1,13 +1,10 @@
-# Authentication
+# Login Authentication
 
-## Login
-
-### Request
+## Request
 
     POST /api/v1/users/login?username={username}&password={password}
 
-### Response
-
+## Response
 ``` json
 {
     "success": true,

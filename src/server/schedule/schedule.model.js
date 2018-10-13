@@ -6,9 +6,9 @@ const Log = require('../log/log.model');
 const Schema = mongoose.Schema;
 
 const ScheduleSchema = new Schema({
-  programId: { type: mongoose.Schema.Types.ObjectId, ref: Program },
+  name: { type: String, required: true },
   programName: { type: String, index: { unique: false } },
-  logs: [{ type: mongoose.Schema.Types.ObjectId, default: Log }],
+  logs: [{ type: mongoose.Schema.Types.ObjectId, default: Log, auto: true }],
   userId: { type: mongoose.Schema.Types.ObjectId, ref: User },
   username: { type: String }
 }, {

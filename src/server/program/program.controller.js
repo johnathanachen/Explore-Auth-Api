@@ -54,11 +54,11 @@ router.put('/:program/edit', (req, res) => {
 router.delete('/:program', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
-  const username = decoded.username;
+  const userId = decoded.id;
 
-  Program.findOneAndRemove({ userId: username, name: req.params.program }, (err, result) => {
+  Program.findOneAndRemove({ userId, name: req.params.program }, (err, result) => {
     if (err) return res.status(500).json({ err: err.message });
-    return res.json({ result, message: 'Successfully deleted' });
+    return res.json({ result, success: 'Program deleted' });
   });
 });
 
