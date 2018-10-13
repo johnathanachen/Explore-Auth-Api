@@ -67,34 +67,6 @@ $ npm test
 - [```PUT``` User Update Exercise]()
 - [```DELETE``` User Remove Exercise]()
 
-GET /api/v1/users                     [TESTED]
-GET /api/v1/users/current       [DONE][TESTED]
-POST /api/v1/users/login        [DONE][TESTED]
-POST /api/v1/users/signup       [DONE][TESTED]
-PUT /api/v1/users/{id}/edit
-
-GET /api/v1/user/programs            [DONE]
-POST /api/v1/user/programs/new       [DONE]
-PUT /api/v1/user/programs/:id/edit   [DONE]
-DELETE /api/v1/user/programs/:id     [DONE]
-GET /api/v1/programs (public programs thats preset)
-
-GET /api/v1/user/schedules             [BUG]
-POST /api/v1/user/schedules/new        [DONE][CHECKED]
-PUT /api/v1/user/schedules/:id/edit    [DONE][CHECKED]
-DELETE /api/v1/user/schedules/:id      [DONE][CHECKED]
-
-GET /api/v1/user/schedules/logs
-POST /api/v1/user/schedules/logs/new       [DONE][CHECKED]
-PUT /api/v1/user/schedules/logs/:id/edit   [BUG]
-DELETE /api/v1/user/schedules/logs/:id
-
-GET /api/v1/user/schedules/logs/exercises
-POST /api/v1/user/schedules/logs/exercises/new
-PUT /api/v1/user/schedules/logs/exercises/:id/edit
-DELETE /api/v1/user/schedules/logs/exercises/:id
-
-
 ## Feedback
 Find a bug or have a feature request? Please file an <a href="https://github.com/johnathanachen/FitnessAPI/issues" targe="_blank">issue</a>!
 

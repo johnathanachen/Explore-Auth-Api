@@ -13,13 +13,13 @@ const assert = chai.assert;
 chai.config.includeStack = true;
 chai.use(chaiHttp);
 
-describe('/GET exercises', () => {
-  it('it should GET all exercises', (done) => {
-    chai.request(server)
-          .get('/api/v1/users/schedules/logs/exercises')
-          .end((err, res) => {
-            res.should.have.status(200);
-            done();
-          });
-  });
-});
+// describe('/GET exercises', () => {
+//   it('it should GET all exercises', (done) => {
+//     chai.request(server)
+//           .get('/api/v1/users/schedules/logs/exercises')
+//           .end((err, res) => {
+//             res.should.have.status(200);
+//             done();
+//           });
+//   });
+// });
