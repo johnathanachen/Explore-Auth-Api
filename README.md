@@ -24,7 +24,7 @@ A custom API on Node using Express and connect to Mongo DB using Mongoose.
 ## Production
 To build and serve the app for production, run the following in your terminal:
 ```bash
-npm run build
+npm run build 
 ```
 Then:
 ```bash
