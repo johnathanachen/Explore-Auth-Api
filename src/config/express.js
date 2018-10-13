@@ -7,7 +7,7 @@ const config = require('./config');
 const routes = require('../index.route');
 const session = require('express-session');
 const createError = require('http-errors');
-
+const path = require('path');
 
 // passport dependencies
 const passport = require('passport');
@@ -31,8 +31,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Enable CORS - Cross Origin Resource Sharing.
 app.use(cors());
 
+app.use('/', express.static('public'));
+
+// Default every route except the above to serve the index.html
 app.get('/', (req, res) => {
-  res.json({ 'Fitii API': 'Welcome' });
+  res.sendFile(path.join(`${__dirname}/public/index.html`));
 });
 
 // Mount all routes on /api/v1 path.

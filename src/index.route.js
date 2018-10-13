@@ -5,7 +5,6 @@ const scheduleRoutes = require('./server/schedule/schedule.route');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-
 router.use('/users', userRoutes);
 router.use('/programs', programRoutes);
 router.use('/schedules', scheduleRoutes);
