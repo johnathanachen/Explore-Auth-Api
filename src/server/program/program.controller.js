@@ -42,11 +42,12 @@ router.post('/new', (req, res) => {
 router.put('/:program/edit', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
-  const username = decoded.username;
-  Program.findOneAndUpdate({ userId: username, name: req.params.program }, req.body, { new: true })
+  const userId = decoded.id;
+  Program.findOneAndUpdate({ userId, name: req.params.program }, req.body, { new: true })
     .exec((err, result) => {
       if (err) return res.status(500).json({ err: err.message });
-      return res.json({ result, message: 'Successfully updated' });
+      if (result == null) return res.status(500).json({ oops: 'program not found' });
+      return res.json({ result, success: 'Program updated' });
     });
 });
 
