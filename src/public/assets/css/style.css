@@ -12131,3 +12131,24 @@ input[type=number] {
 *:focus {
     outline: none;
 }
+
+/* underline title */
+.title-underline {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-family: inherit;
+}
+.title-underline::before {
+  position: absolute;
+  content: "";
+  bottom: calc(0% + 9px);
+  left: 0;
+  display: inline-block;
+  height: 20px;
+  width: 100%;
+  background-color: #ffebdf;
+  z-index: -1;
+  color: #1a0b46;
+  padding-right: 100px;
+}
