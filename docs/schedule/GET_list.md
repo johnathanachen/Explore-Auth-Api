@@ -2,7 +2,7 @@
 
 ## Request
 
-    GET /api/v1/schedules
+    GET /api/v1/users/schedules
 
 ## Response
 ```json

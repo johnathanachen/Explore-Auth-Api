@@ -7,10 +7,7 @@
 ### Request Body
 ```json
 {
-	 "name": "Shredded",
-    "programName": "5x5",
-    "userId": "5bbae8977718cc8579986bed",
-    "username": "johnny"
+    "programName": "Super"
 }
 ```
 
