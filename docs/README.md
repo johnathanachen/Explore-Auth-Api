@@ -6,13 +6,12 @@
   <a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Travis CI"></a>
 </p>
 
-> ***Fitii*** is a custom API on Node using Express and connect to Mongo DB using Mongoose.
+> ***Fitii*** is a fitness API that lets users select workout programs, track their progress. This project is built with Node using Express and persist to Mongo DB using Mongoose.
 
-- [features](#features)
-- [installation](#installation)
-- [usage](#usage)
-- [contributing](#contributing)
-- [license](#license)
+- [Setup](#Setup)
+- [Usage](#Routes)
+- [Feedback](#Feedback)
+- [Contact](#Contact)
 
 ## Setup
 
