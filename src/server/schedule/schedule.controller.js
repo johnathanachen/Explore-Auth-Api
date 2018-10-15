@@ -1,6 +1,5 @@
 const express = require('express');
 const Schedule = require('./schedule.model');
-const Log = require('../log/log.model');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
 
@@ -61,20 +60,54 @@ router.delete('/:schedule', (req, res) => {
   });
 });
 
-router.post('/:schedule/logs/new', (req, res) => {
+// GET LOGS lIST
+router.get('/:schedule/logs', (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const decoded = jwt.verify(token, config.jwtSecret);
   const userId = decoded.id;
 
-  const newLog = new Log({
-    scheduleId: req.params.log,
-    userId
-  });
-
-  newLog.save((err) => {
-    if (err) throw err;
-    res.json({ success: newLog, message: 'Schedule added' });
-  });
+  Schedule.find(({ userId }, { name: req.params.schedule }))
+    .distinct('logs')
+    .exec((err, result) => {
+      if (err) return res.status(500).json({ err: err.message });
+      return res.json({ result, success: 'Logs found' });
+    });
 });
+
+// GET EDIT LOGS
+router.put('/:schedule/logs/edit', (req, res) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const userId = decoded.id;
+
+  const newExercise = {
+    name: req.body.name,
+    setQuantity: req.body.setQuantity,
+    repetition: req.body.repetition,
+    weight: req.body.weight
+  };
+
+  Schedule.findOneAndUpdate(({ userId }, { name: req.params.schedule }),
+    { $addToSet: { logs: newExercise } }, { new: true })
+    .exec((err, result) => {
+      if (err) return res.status(500).json({ err: err.message });
+      return res.json({ result, success: 'Log updated' });
+    });
+});
+
+// REMOVE EXERCISE FROM LOGS
+router.put('/:schedule/logs/:log', (req, res) => {
+  const token = req.headers.authorization.split(' ')[1];
+  const decoded = jwt.verify(token, config.jwtSecret);
+  const userId = decoded.id;
+
+  Schedule.update(({ userId }, { name: req.params.schedule }),
+    { $pull: { logs: { name: req.params.log } } }, { new: true })
+    .exec((err) => {
+      if (err) return res.status(500).json({ err: err.message });
+      return res.json({ success: `${req.params.log} removed from ${req.params.schedule}` });
+    });
+});
+
 
 module.exports = router;

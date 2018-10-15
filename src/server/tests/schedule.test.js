@@ -412,4 +412,4 @@ describe('Remove Schedule', () => {
   // <!-- END Remove Schedule  -->
 
 });
-// <!-- END DELETE  -->
+// <!-- END DELETE Schedule -->

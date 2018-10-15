@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
-// const Program = require('../program/program.model');
+const Exercise = require('../exercise/exercise.model');
 const User = require('../user/user.model');
-const Log = require('../log/log.model');
 
 const Schema = mongoose.Schema;
 
 const ScheduleSchema = new Schema({
   name: { type: String, required: true },
   programName: { type: String, index: { unique: false } },
-  logs: [{ type: mongoose.Schema.Types.ObjectId, default: Log, auto: true }],
+  logs: [Exercise],
   userId: { type: mongoose.Schema.Types.ObjectId, ref: User },
   username: { type: String }
 }, {
