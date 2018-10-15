@@ -1,43 +1,43 @@
 # Models
 
-
-<img src="https://raw.githubusercontent.com/johnathanachen/Fitii/master/docs/assets/images/models.png" width="800">
-
-
-## Log
+## Program
 
 Field | Data Type | Description
 --------- | ----------- | -----------
-date | Date | date of creation
-exercises | [Exercise] | list of exercises completed for session
-
-
-## Exercise
-
-Field | Data Type | Description
---------- | ----------- | -----------
-name | String | name of the exercise completed
-setQuantity | Number | number of sets completed
-repetition | Number | number of repetition completed
-weight | String | total weight used during session
+name | String | name of program
+duration | String | length of program
+frequency | String | how many times per week
+repetition | Number | number of workout repetitions
+setQuantity | Number | number of workout sets
+userId | ObjectId | user uuid
+exercises | [String] | exercises in program
 
 ## Schedule
 
 Field | Data Type | Description
 --------- | ----------- | -----------
-programId | String | uid of selected program
+name | String | name of schedule
 programName | String | name of selected program
-logs | [Log] | a list of completed log entries
+logs | [Exercise] | a list of completed exercise
+userId | ObjectId | user's uuid
+username | String | username
 
-
-## Program
+## Exercise
 
 Field | Data Type | Description
 --------- | ----------- | -----------
-name | String | name of exercise
-duration | String | number of sets
-exercises | String | number of repetition
-frequency | String | total weight
-repetition | Number | total weight
-setQuantity | Number | total weight
-userId | String | total weight
+date | Date | date created
+name | String | name of the exercise
+setQuantity | Number | number of sets
+repetition | Number | number of repetition
+weight | String | total weight used during session
+
+## User
+
+Field | Data Type | Description
+--------- | ----------- | -----------
+createdAt | Date | date created
+username | String | username
+password | String | password
+first | String | first name
+admin | Bool | if user is admin

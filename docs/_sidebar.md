@@ -1,4 +1,4 @@
-- [<div class="ps-icon ps-icon-download"></div> Installation](installation.md)
+- [<div class="ps-icon ps-icon-download"></div> Setup](setup.md)
 - [<div class="ps-icon ps-icon-apps"></div> Models](models.md)
 - [<div class="ps-icon ps-icon-safe"></div> Authentication](authentication.md)
 - [<span class="ps-icon ps-icon-branch"></span>API & Callbacks](api.md)

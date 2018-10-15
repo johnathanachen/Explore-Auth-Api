@@ -1,17 +1,7 @@
-# Login Authentication
+# Authentication
 
-## Request
-
-    POST /api/v1/users/login?username={username}&password={password}
-
-## Response
-``` json
-{
-    "success": true,
-    "message": "Enjoy your API token!",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG
-              5ueSIsImlkIjoiNWJiYWU4OTc3NzE4Y2M4NTc5OTg2YmVkIiwiYWRtaW4iOnRydWUsImV
-              4cCI6MTU0NDU5MTY2MywiaWF0IjoxNTM5NDA0MDYzfQ.94ysp_2Pf1f7_6J_sSFeGrgTb
-              umWsWNAN9VBfq9C2s-"
-}
-```
+## [Admin](authentication.md)
+- [```GET``` Setup](admin/GET_setup.md)
+- [```GET``` User List](admin/GET_user_list.md)
+- [```POST``` Login](admin/POST_login.md)
+- [```DELETE``` Remove User](admin/REMOVE_user.md)

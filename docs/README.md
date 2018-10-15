@@ -34,38 +34,32 @@ $ nodemon
 $ npm test
 ```
 
-## Resources
-### [User](User.md)
-- [```GET``` Admin User List]()
-- [```POST``` User Login]()
-- [```POST``` User Signup]()
-- [```DELETE``` Admin Remove User]()
+## Routes
 
-### [Program](Program.md)
-- [```GET``` Program List]()
-- [```POST``` Admin Create Program]()
-- [```POST``` User Create Program]()
-- [```PUT``` User Update Program]()
-- [```DELETE``` Admin Remove Program]()
-- [```DELETE``` User Remove Program]()
+### [User](user/readme.md)
+- [```POST``` Login](user/POST_login.md)
+- [```POST``` Signup](user/POST_signup.md)
 
-### [Schedule](schedule.md)
-- [```GET``` User Schedule List]()
-- [```POST``` User Create Schedule]()
-- [```PUT``` User Update Schedule]()
-- [```DELETE``` User Remove Schedule]()
+### [Program](program/readme.md)
+- [```GET``` Program List](program/GET_list.md)
+- [```POST``` Create Program](program/POST_create.md)
+- [```PUT``` Update Program](program/UPDATE_program.md)
+- [```DELETE``` Remove Program](program/REMOVE_program.md)
 
-### [Log](log.md)
-- [```GET``` User Log List]()
-- [```POST``` User Create Log]()
-- [```PUT``` User Update Log]()
-- [```DELETE``` User Remove Exercise]()
+### [Schedule](schedule/readme.md)
+- [```GET``` Schedule List](schedule/GET_list.md)
+- [```POST``` Create Schedule](schedule/CREATE_schedule.md)
+- [```PUT``` Update Schedule](schedule/UPDATE_schedule.md)
+- [```DELETE``` Remove Schedule](schedule/REMOVE_schedule.md)
+- [```GET``` Log List](schedule/GET_logs_list.md)
+- [```PUT``` Add Exercise](schedule/CREATE_logs_exercise.md)
+- [```PUT``` Remove Exercise](schedule/REMOVE_logs_exercise.md)
 
-### [Exercise](exercise.md)
-- [```GET``` User Exercise List]()
-- [```POST``` User Create Exercise]()
-- [```PUT``` User Update Exercise]()
-- [```DELETE``` User Remove Exercise]()
+### [Admin](README.md)
+- [```GET``` Setup](admin/GET_setup.md)
+- [```GET``` User List](admin/GET_user_list.md)
+- [```POST``` Login](admin/POST_login.md)
+- [```DELETE``` Remove User](admin/REMOVE_user.md)
 
 ## Feedback
 Find a bug or have a feature request? Please file an <a href="https://github.com/johnathanachen/FitnessAPI/issues" targe="_blank">issue</a>!
