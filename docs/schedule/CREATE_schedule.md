@@ -1,4 +1,4 @@
-# POST Create Schedule
+# CREATE Schedule
 
 ## Request
 

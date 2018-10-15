@@ -1,4 +1,4 @@
-# PUT Remove exercise from logs
+# REMOVE exercise from logs
 
 ## Request
 

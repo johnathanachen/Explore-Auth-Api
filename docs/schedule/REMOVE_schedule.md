@@ -1,4 +1,4 @@
-# DELETE Remove Schedule
+# REMOVE Schedule
 
 ## Request
 

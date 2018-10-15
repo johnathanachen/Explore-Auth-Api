@@ -1,8 +1,8 @@
-# UPDATE Edit Schedule
+# UPDATE Schedule
 
 ## Request
 
-    POST /api/v1/users/schedules/{schedule name}
+    PUT /api/v1/users/schedules/{schedule name}/edit
 
 ### Request Body
 ```json
