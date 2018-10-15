@@ -19,8 +19,8 @@ const assert = chai.assert;
 chai.config.includeStack = true;
 chai.use(chaiHttp);
 
-// <!-- List and New  -->
-describe('Schedule list and new ', () => {
+// <!-- Logs  -->
+describe('Logs Create/Read/Delete ', () => {
 
   const registerDetails = {
     username: 'TEST user',
@@ -150,8 +150,8 @@ describe('Schedule list and new ', () => {
   // <!-- END GET Logs  -->
 
   // <!-- PUT Add To Log  -->
-  describe('/POST schedules/new', () => {
-    it('make a new Schedule', (done) => {
+  describe('/POST add to log', () => {
+    it('create new excercise for log', (done) => {
       chai.request(server)
             .put('/api/v1/users/schedules/logs/edit')
             .set('Authorization', `Token ${user.token}`)
@@ -181,4 +181,4 @@ describe('Schedule list and new ', () => {
   // <!-- END Remove exercise from Logs  -->
 
 });
-// <!-- END List and New  -->
+// <!-- END Logs -->

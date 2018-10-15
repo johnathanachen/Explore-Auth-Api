@@ -293,9 +293,9 @@ describe('Program edit', () => {
   });
 
   afterEach((done) => {
-    Program.remove({ name: 'TEST 5x5' }, (err) => {
-      if (err) throw new Error('cannot remove program');
-      done();
+    Program.find({ name: newProgram.name }, (err, result) => {
+      if (!result.lenght) return done();
+      throw new Error('cannot remove program');
     });
   });
   // <!-- END before and after -->

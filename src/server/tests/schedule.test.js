@@ -382,9 +382,9 @@ describe('Remove Schedule', () => {
   });
 
   afterEach((done) => {
-    Schedule.find({ name: newSchedule.name }, (err) => {
-      if (err) throw new Error('schedule still in database');
-      done();
+    Schedule.find({ name: newSchedule.name }, (err, result) => {
+      if (!result.lenght) return done();
+      throw new Error('schedule still in database');
     });
   });
 
