@@ -1,12 +1,10 @@
-# Create Program
+# CREATE Program
 
-
-## Example
-### Request
+## Request
 
     POST /api/v1/programs/new
 
-#### Request Body
+## Request Body
 ```json
 {
     "name" : "5x5",
@@ -18,7 +16,7 @@
 }
 ```
 
-### Response
+## Response
 ```json
 {
     "success": {

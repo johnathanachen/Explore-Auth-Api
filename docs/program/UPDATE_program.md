@@ -1,4 +1,4 @@
-# Update Program
+# UPDATE Program
 
     PUT /api/v1/users/programs/{program name}/edit
 
